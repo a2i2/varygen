@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "varygen"
+version = "1.0.0"
+description = ""
+authors = ["Stefanus Kurniawan <stefanus.kurniawan@deakin.edu.au>"]
+readme = "README.md"
+packages = [{include = "varygen"}]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.13"
+langchain = "^0.0.300"
+surround = "^0.1.2"
+llama-index = "^0.8.33"
+bs4 = "^0.0.1"
+python-dotenv = "^1.0.0"
+pgvector = "^0.2.3"
+pypdf = "^3.16.2"
+pandas = "^2.1.1"
+docx2txt = "^0.8"
+psycopg2-binary = "^2.9.9"
+openai = "0.28"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

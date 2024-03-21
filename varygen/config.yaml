@@ -1,0 +1,25 @@
+# Set Hydra log path to the target output path
+hydra:
+  run:
+    dir: ./output/${now:%Y-%m-%d-%H-%M-%S}
+
+indexing:
+  baseline:
+    max_chunk_characters: 2500
+    overlap_characters: 200
+
+variation_generation:
+  model_name: gpt-4
+  temperature: 0.4
+  frequency_penalty: 0
+  cache_dir_path: variation_cache
+  intermediate_output_prefix: variation
+
+variation_filter_generation:
+  model_name: gpt-4-0314 # Having issue with GPT-4 model for this stage, so using an older version for now
+  temperature: 0
+  cache_dir_path: filter_cache
+  intermediate_output_prefix: filter
+
+# Output files in the same directory that Hydra outputs to.
+output_dir: ${hydra:run.dir}
