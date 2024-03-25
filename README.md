@@ -4,7 +4,7 @@ A test input generation approach using LLM. This 3-step approach, combines the s
 
 ![Stages](./stages.png)
 
-Paper link: [arXiv](https://arxiv.org/abs/2401.08138)
+Paper link: [LLMs for Test Input Generation for Semantic Caches](https://arxiv.org/abs/2401.08138)
 
 ## Basic usage
 
@@ -41,9 +41,9 @@ For a full list of what can be configured, see the [config.py](./varygen/config.
 
 ## Run questions generation pipeline
 
-This pipeline is used to generation question-answer datasets from either 1) documents or 2) existing question-answer sets.
+This pipeline is used to generate question-answer datasets from either 1) documents or 2) existing question-answer sets.
 
-To run the full end to end pipeline, you need to set up the required CSV placed at `input/document_list.csv`
+To run the full end-to-end pipeline, you need to set up the required CSV placed at `input/document_list.csv`
 
 ```csv
 filename,keywords_to_insert
@@ -60,7 +60,7 @@ poetry run python3 varygen.py pipeline=QA_GENERATION
 
 The results will be saved to a file called `new_questions.csv` in the `output` directory (in a timestamped subdirectory).
 
-If you have failed run, you can actually resume from the last completed stages/questions by using the command below:
+If you have a failed run, you can actually resume from the last completed stages/questions by using the command below:
 
 ```bash
 poetry run python3 varygen.py pipeline=QA_GENERATION output_dir_from_previous_run=path/to/the/previous/failed/run
@@ -78,7 +78,7 @@ This step will only run the question generation part from documents (chunks). It
 
 **Firstly**, you will need to ensure that you have documents indexed in the vector store. Follow instruction under the [Indexing](#run-the-indexing-pipeline) section to populate it if required.
 
-**Note**: You only need to index if have nothing in your vector store.
+**Note**: You only need to index if you have nothing in your vector store.
 
 Once documents are populated, then run the following command:
 
@@ -90,7 +90,7 @@ The results will be saved to a file called `original_questions.csv` in the `outp
 
 ### Variation generation
 
-This step will only run the variations generation part, assuming that you already have question-answer sets ready as an input.
+This step will only run the variations generation part, assuming that you already have question-answer sets ready as input.
 
 So first make sure you have a CSV file placed at `input/original_questions.csv` with the following format:
 
