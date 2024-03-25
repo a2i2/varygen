@@ -4,7 +4,7 @@ A test input generation approach using LLM. This 3-step approach, combines the s
 
 ![Stages](./stages.png)
 
-Paper link: [LLMs for Test Input Generation for Semantic Caches](https://arxiv.org/abs/2401.08138)
+Paper link: [LLMs for Test Input Generation for Semantic Applications](https://arxiv.org/abs/2401.08138)
 
 ## Basic usage
 
